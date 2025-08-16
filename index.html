@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanisha Agrawal - Senior Software Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #fafafa;
+            color: #37352f;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e9e9e7;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #2d3748;
+        }
+
+        .profile-info .title {
+            font-size: 1.2rem;
+            color: #718096;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #4a5568;
+            text-decoration: none;
+        }
+
+        .contact-item:hover {
+            color: #667eea;
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e9e9e7;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: #667eea;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h4 {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #2d3748;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #e2e8f0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #4a5568;
+            border: 1px solid #cbd5e0;
+        }
+
+        .experience-item {
+            border-left: 3px solid #667eea;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            position: absolute;
+            left: -7.5px;
+            top: 8px;
+        }
+
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .company-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #2d3748;
+        }
+
+        .role-title {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .date-location {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .achievements {
+            margin-top: 15px;
+        }
+
+        .achievement-item {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .achievement-item::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .project-title {
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .project-description {
+            color: #4a5568;
+            margin-bottom: 12px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tech-item {
+            background: #667eea;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .cert-item, .award-item, .publication-item {
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border-left: 4px solid #48bb78;
+        }
+
+        .publication-item {
+            border-left-color: #ed8936;
+        }
+
+        .award-item {
+            border-left-color: #f56565;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .item-subtitle {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .company-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .current-project {
+            background: #e6fffa;
+            border: 1px solid #81e6d9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .current-project h4 {
+            color: #234e52;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            background: #fef5e7;
+            border-left: 4px solid #f6ad55;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="profile-section">
+                <div class="profile-pic">
+                    TA
+                </div>
+                <div class="profile-info">
+                    <h1>Tanisha Agrawal</h1>
+                    <div class="title">Senior Software Developer & AI/ML Engineer</div>
+                    <div class="summary">
+                        Senior Software Developer with 3+ years of experience building enterprise-scale financial applications, AI-powered analytics platforms, and event-driven architectures. Expertise in full-stack development, machine learning implementation, and cloud-native solutions for investment risk management.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <a href="tel:+919740906571" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    +91 9740906571
+                </a>
+                <a href="mailto:agrawaltanishadevendra@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    agrawaltanishadevendra@gmail.com
+                </a>
+                <a href="https://github.com/Tan-isha-agrawal" class="contact-item" target="_blank">
+                    <i class="fab fa-github"></i>
+                    @Tan-isha-agrawal
+                </a>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Bengaluru, Karnataka, India
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-code"></i>
+                Technical Skills
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Frameworks & Libraries</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">.NET Core</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>AI/ML & Analytics</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Data Science</span>
+                        <span class="skill-tag">PowerBI</span>
+                        <span class="skill-tag">MLFlow</span>
+                        <span class="skill-tag">Monte Carlo</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Cloud & DevOps</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">OpenShift</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Event-Driven Systems</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Apache Kafka</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">SignalR</span>
+                        <span class="skill-tag">Circuit Breaker</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Databases</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">NoSQL</span>
+                        <span class="skill-tag">Redis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Work Experience Section -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-briefcase"></i>
+                Work Experience
+            </h2>
+            
+            <div class="experience-item">
+                <div class="company-header">
+                    <div>
+                        <div class="company-name">Wells Fargo</div>
+                        <div class="role-title">Senior Software Developer / Senior Assistant Vice President</div>
+                    </div>
+                    <div class="date-location">Aug 2022 - Present | Bengaluru, India</div>
+                </div>
+                
+                <div class="current-project">
+                    <h4>🚀 Current Projects</h4>
+                    <div class="achievement-item">Leading development of SLV Event-Driven Architecture using C# with Apache Kafka for real-time event streaming, Redis for high-performance caching, and SignalR for live data updates to trading systems</div>
+                    <div class="achievement-item">Architecting OpenShift Container Platform (OCP) migration with GSLB configuration, implementing enterprise-grade circuit breaker, retry mechanisms, and throttling controls</div>
+                    <div class="achievement-item">Continuing leadership of NII Forecasting project using AI/ML models to predict Net Interest Income for MBS deals</div>
+                </div>
+
+                <div class="highlight">
+                    <strong>AI/ML Impact:</strong> Developed Monte Carlo simulation models for investment risk forecasting and portfolio optimization supporting $100M+ in managed assets
+                </div>
+
+                <div class="achievements">
+                    <h4>Key Achievements:</h4>
+                    <div class="achievement-item">Led application decommission of Muni Matrix and Clockwork initiative, migrating legacy systems to modern cloud-native architecture</div>
+                    <div class="achievement-item">Developed 20+ enterprise APIs ensuring seamless communication between distributed financial systems</div>
+                    <div class="achievement-item">Implemented Enterprise Deployment Pipeline (EPL) with all 15 application factors for production-ready financial software</div>
+                    <div class="achievement-item">Migrated authentication systems to OAuth2 technology for enhanced security compliance</div>
+                    <div class="achievement-item">Specialized in Buy-side investment risk management, handling high-value securities portfolio management</div>
+                    <div class="achievement-item">Built custom PowerBI reports with DAX/Power Query, integrating multiple APIs for executive-level insights</div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company-header">
+                    <div>
+                        <div class="company-name">IBM</div>
+                        <div class="role-title">Software Developer</div>
+                    </div>
+                    <div class="date-location">Jan 2022 - Aug 2022 | Bengaluru, India</div>
+                </div>
+                <div class="achievements">
+                    <div class="achievement-item">Developed CURAM software solutions for government social program management</div>
+                    <div class="achievement-item">Built portal for SPM management enabling citizen services and government program administration</div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company-header">
+                    <div>
+                        <div class="company-name">Kopi Date</div>
+                        <div class="role-title">Full-Stack Developer Intern</div>
+                    </div>
+                    <div class="date-location">Oct 2021 - Dec 2021 | Singapore</div>
+                </div>
+                <div class="achievements">
+                    <div class="achievement-item">Enhanced dating platform's user matching system using machine learning and data science techniques</div>
+                    <div class="achievement-item">Developed and deployed APIs on Google Cloud Platform (GCP) integrated with Angular frontend</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-rocket"></i>
+                Key Projects
+            </h2>
+            
+            <div class="project-card">
+                <div class="project-title">SLV Event-Driven System (Current)</div>
+                <div class="project-description">
+                    Leading development of high-performance C# application utilizing Apache Kafka for event streaming, Redis for caching layer, and SignalR for real-time notifications. Implemented enterprise patterns including circuit breaker, retry logic, and throttling mechanisms.
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-item">C#</span>
+                    <span class="tech-item">Apache Kafka</span>
+                    <span class="tech-item">Redis</span>
+                    <span class="tech-item">SignalR</span>
+                    <span class="tech-item">OpenShift</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">Advance Data Analytics (1ADA)</div>
+                <div class="project-description">
+                    Enterprise financial analytics platform with C# backend and React frontend. Features multiple microservices supporting daily investment analysis for bonds, treasuries, and MBS securities with Monte Carlo simulation engine.
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-item">C#</span>
+                    <span class="tech-item">React</span>
+                    <span class="tech-item">Microservices</span>
+                    <span class="tech-item">Monte Carlo</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">Muni Logic (Project Lead)</div>
+                <div class="project-description">
+                    Led development of Python DASH-based application completed in 3 months to replace legacy Muni Matrix system. Integrated Moody's data feeds for municipal portfolio management with comprehensive analytics dashboard.
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">DASH</span>
+                    <span class="tech-item">Analytics</span>
+                    <span class="tech-item">Portfolio Management</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">NII Forecasting System (Project Lead)</div>
+                <div class="project-description">
+                    Developed AI-powered forecasting system to predict Net Interest Income of MBS deals from multiple competitors. Built machine learning pipeline helping investment teams identify optimal deals for portfolio optimization.
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">Machine Learning</span>
+                    <span class="tech-item">Forecasting</span>
+                    <span class="tech-item">Financial Analytics</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-certificate"></i>
+                Certifications
+            </h2>
+            <div class="cert-item">
+                <div class="item-title">AWS Cloud Fundamentals Specialization</div>
+                <div class="item-subtitle">Amazon Web Services</div>
+            </div>
+            <div class="cert-item">
+                <div class="item-title">Data Science from HarvardX</div>
+                <div class="item-subtitle">Harvard University</div>
+            </div>
+            <div class="cert-item">
+                <div class="item-title">AZ-900 Azure Cloud Fundamentals</div>
+                <div class="item-subtitle">Microsoft Azure</div>
+            </div>
+            <div class="cert-item">
+                <div class="item-title">AZ-204 Azure Developer</div>
+                <div class="item-subtitle">Microsoft Azure</div>
+            </div>
+            <div class="cert-item">
+                <div class="item-title">FRM Level 1 (Financial Risk Manager)</div>
+                <div class="item-subtitle">Global Association of Risk Professionals</div>
+            </div>
+        </div>
+
+        <!-- Publications Section -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-file-alt"></i>
+                Publications
+            </h2>
+            <div class="publication-item">
+                <div class="item-title">"Forecasting Yield and Prices for Farmers in India"</div>
+                <div class="item-subtitle">Published in Publons Journal</div>
+            </div>
+            <div class="publication-item">
+                <div class="item-title">"Forecasting Forest Cover of Amazon Forest Using Satellite Imagery"</div>
+                <div class="item-subtitle">Published in IJNGC Journal</div>
+            </div>
+        </div>
+
+        <!-- Awards Section -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-trophy"></i>
+                Awards & Recognition
+            </h2>
+            <div class="award-item">
+                <div class="item-title">Finalist - Wells Fargo Global Tech Hackathon</div>
+                <div class="item-subtitle">Wells Fargo</div>
+            </div>
+            <div class="award-item">
+                <div class="item-title">Global Recognition in IP Department</div>
+                <div class="item-subtitle">Wells Fargo</div>
+            </div>
+            <div class="award-item">
+                <div class="item-title">Best Team Member in Sales Team</div>
+                <div class="item-subtitle">AIESEC</div>
+            </div>
+            <div class="award-item">
+                <div class="item-title">Silver Medalist - Math Olympiad</div>
+                <div class="item-subtitle">Academic Achievement</div>
+            </div>
+        </div>
+
+        <!-- Leadership Experience -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-users"></i>
+                Leadership & Volunteer Experience
+            </h2>
+            
+            <div class="experience-item">
+                <div class="company-header">
+                    <div>
+                        <div class="company-name">AIESEC International</div>
+                        <div class="role-title">Project Manager</div>
+                    </div>
+                    <div class="date-location">Jan 2021 - May 2021 | Montreal, Canada</div>
+                </div>
+                <div class="achievements">
+                    <div class="achievement-item">Led Global Exchange Program for 180 countries, overseeing cross-cultural initiatives</div>
+                    <div class="achievement-item">Organized and supervised international exchange programs ensuring successful outcomes</div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company-header">
+                    <div>
+                        <div class="company-name">AIESEC Singapore</div>
+                        <div class="role-title">Sales Manager</div>
+                    </div>
+                    <div class="date-location">Jan 2020 - Dec 2020 | Singapore</div>
+                </div>
+                <div class="achievements">
+                    <div class="achievement-item">Led sales team and managed client relationships, consistently exceeding targets</div>
+                    <div class="achievement-item">Closed $2,000 SGD deal with Standard Chartered Bank, contributing to team revenue goals</div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company-header">
+                    <div>
+                        <div class="company-name">Make a Difference</div>
+                        <div class="role-title">Education Support Volunteer</div>
+                    </div>
+                    <div class="date-location">Oct 2019 - Dec 2019 | Nagpur, India</div>
+                </div>
+                <div class="achievements">
+                    <div class="achievement-item">Provided educational support to underprivileged children in shelter homes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
